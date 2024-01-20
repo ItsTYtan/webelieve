@@ -26,32 +26,46 @@ export default function Page() {
         <main>
             <div className={styles.MainText}>
                 <p className={styles.header}>
-                Welcome to Artifex. 
+                    Welcome to Artifex
                 </p>
-                <p>
-                I am Kenny, a staff member working here,  and I will be guiding you in using this website as well as the standard do&apos;s and don&apos;ts of this company. 
+                <p className={styles.para}>
+                    I am Kenny, a staff member working here,  and I will be guiding you in using this website as well as the standard do&apos;s and don&apos;ts of this company.
                 </p>
-                Artifex is at the forefront of AI technology and we strive to provide a better quality of life to all users. We mainly focus on AI chatbots where users are able to ask various questions and receive the corresponding feedback.
-                All staff will have their own individual accounts which you can login via this page. 
-                Username do leave it as your own name for easier recognition and for password, only four numerical numbers are allowed to be used.
-                Do&apos;s and Don&apos;ts
-                All staff members are required to stay on the intranet servers at all times while working
-                All staff members are not allowed to disclose any form of work that was done while working.
-                All staff members are not to disclose any of their own credentials to a third party.
-                Blah blah
-                Now once again, we wish that you will work harder to not just contribute to this company, but to the betterment of mankind. 
+                <p className={styles.para}>
+                    Artifex is at the forefront of AI technology and we strive to provide a better quality of life to all users. We mainly focus on AI chatbots where users are able to ask various questions and receive the corresponding feedback.
+                </p>
+                <p className={styles.para}>
+                    All staff will have their own individual accounts which you can login via this page.
+                    <br></br>
+                    For your username, leave it as your own name for easier recognition
+                    <br></br>
+                    For you password, only four numerical numbers are allowed to be used.
+                </p>
+                <p className={styles.para}>
+                    <h3 className='text-2xl text-center mb-2'>
+                        Do&apos;s and Don&apos;ts
+                    </h3>
+                    - All staff members are required to stay on sthe intranet servers at all times while working
+                    <br></br>
+                    - All staff members are not allowed to disclose any form of work that was done while working.
+                    <br></br>
+                    - All staff members are not to disclose any of their own credentials to a third party.
+                </p>
+                <p className={styles.para}>
+                    Once again, we wish that you will work harder to not just contribute to this company, but to the betterment of mankind.
+                </p>
             </div>
 
             <div className={styles.InputField}>
                 <div className={styles.username}>
-                    <input type="text" ref={usernameRef} placeholder='Enter your username'></input>
+                    <input type="text" ref={usernameRef} id='fname'placeholder='Enter your username'></input>
                 </div>
 
                 <div className={styles.password}>
                     <input type="text" id="fpassword" ref={passwordRef} placeholder='Enter your password'></input>
                 </div>
 
-                <div className={styles.Rejected} id = "Reject">
+                <div className={styles.Rejected} id="Reject">
                     Incorrect Credentials
                 </div>
 
@@ -61,36 +75,36 @@ export default function Page() {
                     </button>
                 </div>
             </div>
-            <div className={styles.red}> 
+            <div className={styles.red}>
                 <Image
-                src="/red.png"
-                alt=""
-                height={0}
-                width={400}>
+                    src="/red.png"
+                    alt=""
+                    height={0}
+                    width={400}>
                 </Image>
             </div>
             <div className={styles.blue}>
                 <Image
-                src="/blue.jpeg"
-                alt=""
-                height={0}
-                width={400}>
+                    src="/blue.jpeg"
+                    alt=""
+                    height={0}
+                    width={400}>
                 </Image>
             </div>
             <div className={styles.green}>
                 <Image
-                src="/green.jpeg"
-                alt=""
-                height={0}
-                width={400}>
+                    src="/green.jpeg"
+                    alt=""
+                    height={0}
+                    width={400}>
                 </Image>
             </div>
             <div className={styles.orange}>
                 <Image
-                src="/orange.jpg"
-                alt=""
-                height={0}
-                width={400}>
+                    src="/orange.jpg"
+                    alt=""
+                    height={0}
+                    width={400}>
                 </Image>
             </div>
         </main>
