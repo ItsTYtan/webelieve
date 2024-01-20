@@ -1,12 +1,11 @@
 "use client"
 
 import styles from '@/app/pvbw/pvbw.module.css';
-import { useRef } from 'react';
 
 export default function Page() {
     return(
         <main>
-            <div>
+            <div className={styles.image}>
                 <img src='email.png'></img>
             </div>
             <div className={styles.text}> 
