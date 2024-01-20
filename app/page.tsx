@@ -2,7 +2,6 @@
 
 import { useRef, useState } from "react";
 import getAIResponse from "./lib/AI";
-import Image from "next/image";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -87,36 +86,3 @@ export default function Home() {
     </main>
   );
 }
-
-
-// const AIChatResponse = forwardRef(function AIChatResponse({
-//   resArr,
-//   ref,
-// }:{
-//   resArr: string[]
-//   ref: ForwardedRef<HTMLParagraphElement>
-// }) {
-//   if (resArr.length > 0) {
-//     return resArr.map((res: string, index: number) => {
-//       return(
-//         <div key={index}>
-//           <p ref={ref}>{res}</p>
-//         </div>
-//       )
-//     })
-//   } else {
-//     return (
-//       <>
-//         <Image
-//           className="rounded-xl shadow-md"
-//           src="/artifex_logo.png"
-//           alt=""
-//           height={0}
-//           width={400}
-//         >
-//         </Image>
-//         <h1 className="text-xl">Hi, how can I help you today?</h1>
-//       </>
-//     )
-//   }
-// });
