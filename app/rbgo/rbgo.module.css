@@ -13,6 +13,7 @@
 .Rejected {
     display: none;
     color: red;
+    margin-bottom:20px
 }
 
 .InputField {
@@ -26,7 +27,7 @@
 }
 
 .header {
-    margin:70px;
+    margin:50px;
     font-size: 40px;
 }
 .para {
@@ -37,7 +38,7 @@
     align-self: center;
     align-items: center;
     justify-self: center;
-    text-align: center;
+    text-align: left;
     margin: auto;
     flex-direction: column;
     display: flex;
@@ -50,8 +51,7 @@
     align-self: center;
     align-items: center;
     justify-self: center;
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: left;
     flex-direction: column;
     display: flex;
     border: 2px solid black;

@@ -41,13 +41,13 @@ export default function Page() {
                     <br></br>
                     For your username, leave it as your own name for easier recognition
                     <br></br>
-                    For you password, only four numerical numbers are allowed to be used.
+                    For your password, only four numerical numbers are allowed to be used.
                 </p>
+                <h3 className='text-2xl text-center mb-2'>
+                    Do&apos;s and Don&apos;ts
+                </h3>
                 <p className={styles.para}>
-                    <h3 className='text-2xl text-center mb-2'>
-                        Do&apos;s and Don&apos;ts
-                    </h3>
-                    - All staff members are required to stay on sthe intranet servers at all times while working
+                    - All staff members are required to stay on the intranet servers at all times while working
                     <br></br>
                     - All staff members are not allowed to disclose any form of work that was done while working.
                     <br></br>
@@ -59,12 +59,15 @@ export default function Page() {
             </div>
 
             <div className={styles.InputField}>
-                <div className={styles.username}>
-                    <input type="text" ref={usernameRef} id='fname'placeholder='Enter your username'></input>
+                <h3 className='text-2xl text-center mb-2'>
+                    Login
+                </h3>
+                <div>
+                    <input className={styles.username} type="text" ref={usernameRef} id='fname'placeholder='Enter your username'></input>
                 </div>
 
-                <div className={styles.password}>
-                    <input type="text" id="fpassword" ref={passwordRef} placeholder='Enter your password'></input>
+                <div>
+                    <input className={styles.password} type="text" id="fpassword" ref={passwordRef} placeholder='Enter your password'></input>
                 </div>
 
                 <div className={styles.Rejected} id="Reject">
