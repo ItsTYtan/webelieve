@@ -1,0 +1,51 @@
+.MainText {
+    margin: auto;
+    align-self: center;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    width: 65%;
+}
+
+.Questions {
+    margin: auto;
+    text-align: center;
+    align-self: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.first {
+    position: absolute;
+    top: 10%;
+    left:10%;
+    width: 3%;
+    height: 3%;
+    cursor: pointer;
+}
+
+.second {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 3%;
+    height: 3%;
+    cursor: pointer;
+}
+
+.third {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 3%;
+    height: 3%;
+    cursor: pointer;
+}
+
+.Name {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    color: white;
+    font-size: 20px;
+}
