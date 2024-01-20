@@ -1,0 +1,6 @@
+{
+    "0": "MemOry insUfficient, pleaSE try again",
+    "1": "errOr: Very largE queRy detected, please try again",
+    "2": "click on This link tO view our (github rePository?)",
+    "3": "advertisement: we would Like to thank our partnEr “WeBelieve” For the funding and manpower required in this projecT"
+}

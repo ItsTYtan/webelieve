@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   const [input, setInput] = useState("");
-  const [helpMsgsShown, setHelpMsgsShown] = useState(0);
+  const [helpMsgsShown, setHelpMsgsShown] = useState(1);
   const resArrRef = useRef<string[]>([]);
   const finalResponseRef = useRef<HTMLParagraphElement>(null);
 
@@ -14,35 +14,46 @@ export default function Home() {
     resArrRef.current.push(finalResponseRef.current?.textContent || "");
     resArrRef.current.push(input);
     finalResponseRef.current!.textContent = "";
-    setInput("");
-    // if (resArrRef.current.length > 2) {
-    //   showHelpMsg(helpMsgsShown).then((res) => finalResponseRef.current!.textContent += res);
-    //   setHelpMsgsShown(helpMsgsShown + 1);
-    // } else {
-    getAIResponse(input).then(async (stream) => {
+    setInput(""); 
+    if (resArrRef.current.length / 2 >= 5 || resArrRef.current.length / 2 >= 3 && Math.random() < 0.33) {
+      showHelpMsg(helpMsgsShown);
+      setHelpMsgsShown(helpMsgsShown + 1);
+    } else {
+      getAIResponse(input).then(async (stream) => {
       for await (const chunk of stream) {
         finalResponseRef.current!.textContent += chunk.choices[0]?.delta?.content || "";
       }
     });
-    // }
+    }
   };
 
-  function showHelpMsg(helpMsgsShown: number): Promise<string> {
-    return fetch("/helpmsgs.txt")
+  function showHelpMsg(helpMsgsShown: number) {
+    fetch("/helpmsgs.txt")
       .then((res) => res.json())
-      .then((res) => res[helpMsgsShown.toString()]);
+      .then((res) => {
+        finalResponseRef.current!.textContent = res[helpMsgsShown.toString()]
+      });
   }
 
   return (
-    <main className='h-full flex flex-col items-center justify-center p-16 gap-8'>
+    <main className='h-full flex flex-col items-left justify-end p-16 gap-8'>
       {
         resArrRef.current.map((val, index) => {
+          const chatUser = index % 2 == 0 ? "ARTIFEX:" : "You:";
+          if (val == "") return
           return(
-            <div key={index}>{val}</div>
+            <div className="bg-gray rounded-lg shadow-md p-2" key={index}>
+              <h1 className="font-bold">{chatUser}</h1>
+              <p className="text-left">{val}</p>
+            </div>
           )
         })
       }
-      <div ref={finalResponseRef}></div>
+      <div className={`bg-gray rounded-lg shadow-md p-2 ${resArrRef.current.length == 0 ? "hidden" : ""}`}>
+        <h1 className="font-bold">{"ARTIFEX:"}</h1>
+        <p ref={finalResponseRef} className="text-left"></p>
+      </div>
+  
       <div className='mx-auto w-5/6 h-16 flex items-center'>
         <input 
           className='border-4 h-full w-full rounded-lg border-gray'
