@@ -1,0 +1,58 @@
+.MainText {
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    margin: auto;
+    width: 65%;
+
+}
+
+.Rejected {
+    display: none;
+    color: red;
+}
+
+.InputField {
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+}
+
+.red {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 10%;
+    height: 10%;
+}
+
+.blue {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    width: 10%;
+    height: 10%;
+}
+
+.green {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 10%;
+    height: 10%;
+}
+
+.orange {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 10%;
+    height: 10%;
+}
