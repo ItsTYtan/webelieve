@@ -2,7 +2,8 @@
 
 import styles from '@/app/rbgo/rbgo.module.css';
 import { useRef } from 'react';
-import React from 'react'
+import React from 'react';
+import Image from "next/image";
 
 export default function Page() {
     const usernameRef = useRef<HTMLInputElement>(null);
@@ -24,11 +25,16 @@ export default function Page() {
     return (
         <main>
             <div className={styles.MainText}>
-                Welcome to Artifex. <br></br>I am Kenny, a staff member working here,  and I will be guiding you in using this website as well as the standard do’s and don'ts of this company. 
-                (Name of Company) is at the forefront of AI technology and we strive to provide a better quality of life to all users. We mainly focus on AI chatbots where users are able to ask various questions and receive the corresponding feedback.
+                <p className={styles.header}>
+                Welcome to Artifex. 
+                </p>
+                <p>
+                I am Kenny, a staff member working here,  and I will be guiding you in using this website as well as the standard do&apos;s and don&apos;ts of this company. 
+                </p>
+                Artifex is at the forefront of AI technology and we strive to provide a better quality of life to all users. We mainly focus on AI chatbots where users are able to ask various questions and receive the corresponding feedback.
                 All staff will have their own individual accounts which you can login via this page. 
                 Username do leave it as your own name for easier recognition and for password, only four numerical numbers are allowed to be used.
-                Do’s and Don’ts
+                Do&apos;s and Don&apos;ts
                 All staff members are required to stay on the intranet servers at all times while working
                 All staff members are not allowed to disclose any form of work that was done while working.
                 All staff members are not to disclose any of their own credentials to a third party.
@@ -42,7 +48,7 @@ export default function Page() {
                 </div>
 
                 <div className={styles.password}>
-                    <input type="text" id="fpassword" ref={passwordRef} placeholder='Enter your Password'></input>
+                    <input type="text" id="fpassword" ref={passwordRef} placeholder='Enter your password'></input>
                 </div>
 
                 <div className={styles.Rejected} id = "Reject">
@@ -50,22 +56,42 @@ export default function Page() {
                 </div>
 
                 <div>
-                    <button onClick={checkCredentials} className="Main-button">
-                        Submit!
+                    <button onClick={checkCredentials} className={styles.mainButton}>
+                        Submit
                     </button>
                 </div>
             </div>
             <div className={styles.red}> 
-                <img src='red.png'></img>
+                <Image
+                src="/red.png"
+                alt=""
+                height={0}
+                width={400}>
+                </Image>
             </div>
             <div className={styles.blue}>
-                <img src='blue.jpeg'></img>
+                <Image
+                src="/blue.jpeg"
+                alt=""
+                height={0}
+                width={400}>
+                </Image>
             </div>
             <div className={styles.green}>
-                <img src='green.jpeg'></img>
+                <Image
+                src="/green.jpeg"
+                alt=""
+                height={0}
+                width={400}>
+                </Image>
             </div>
             <div className={styles.orange}>
-                <img src = 'orange.jpg'></img>
+                <Image
+                src="/orange.jpg"
+                alt=""
+                height={0}
+                width={400}>
+                </Image>
             </div>
         </main>
     );

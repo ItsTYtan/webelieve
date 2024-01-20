@@ -25,6 +25,55 @@
     display: flex;
 }
 
+.header {
+    margin:90px;
+    font-size: 40px;
+}
+
+.username {
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.password {
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+.mainButton {
+    align-self: center;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    margin: auto;
+    flex-direction: column;
+    display: flex;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 7px 14px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.mainButton:hover {
+    background-color: black;
+    color: white;
+  }
+
 .red {
     position: absolute;
     top: 5%;
@@ -35,7 +84,7 @@
 
 .blue {
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
     left: 5%;
     width: 10%;
     height: 10%;
@@ -51,7 +100,7 @@
 
 .orange {
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
     right: 5%;
     width: 10%;
     height: 10%;
