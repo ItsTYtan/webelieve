@@ -21,6 +21,8 @@ export default function Page() {
         else {
             document.getElementById('Reject')!.style.display = 'block'
         }
+        usernameRef.current!.value = "";
+        passwordRef.current!.value = "";
     }
     return (
         <main>
