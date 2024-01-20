@@ -6,19 +6,28 @@ import Image from "next/image";
 
 export default function Home() {
   const [input, setInput] = useState("");
-  const [helpMsgsShown, setHelpMsgsShown] = useState(1);
+  const [helpMsgsShown, setHelpMsgsShown] = useState(0);
   const resArrRef = useRef<string[]>([]);
   const finalResponseRef = useRef<HTMLParagraphElement>(null);
+  const [counter, setCounter] = useState(1)
 
   function handleClick() {
     resArrRef.current.push(finalResponseRef.current?.textContent || "");
     resArrRef.current.push(input);
     finalResponseRef.current!.textContent = "";
+    var test = Math.random()
+    console.log(test)
     setInput(""); 
-    if (resArrRef.current.length / 2 >= 5 || resArrRef.current.length / 2 >= 3 && Math.random() < 0.33) {
+    if (counter >= 5 || (counter >= 3 && test < (1 / (5 - counter + 1)))) {
+      setCounter(1);
       showHelpMsg(helpMsgsShown);
       setHelpMsgsShown(helpMsgsShown + 1);
+      if (helpMsgsShown == 3) {
+        setHelpMsgsShown(0)
+        document.getElementById("Button")!.style.display='block'
+      }
     } else {
+      setCounter(counter + 1);
       getAIResponse(input).then(async (stream) => {
       for await (const chunk of stream) {
         finalResponseRef.current!.textContent += chunk.choices[0]?.delta?.content || "";
@@ -33,6 +42,10 @@ export default function Home() {
       .then((res) => {
         finalResponseRef.current!.textContent = res[helpMsgsShown.toString()]
       });
+  }
+
+  function goNext() {
+    window.location.href = '/rbgo'
   }
 
   return (
@@ -69,6 +82,8 @@ export default function Home() {
           submit
         </button>
       </div>
+      <a href="/rbgo" className="hidden absolute top-4 left-4 w-16 h-8" id="Button">
+      </a>
     </main>
   );
 }
