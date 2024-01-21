@@ -1,7 +1,7 @@
 "use client"
 
 import styles from '@/app/rbgo/rbgo.module.css';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import React from 'react';
 import Image from "next/image";
 
@@ -9,6 +9,7 @@ export default function Page() {
     const usernameRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
 
+    // Checks for either normal access or admin access
     function checkCredentials() {
         const name = usernameRef.current!.value;
         var password = passwordRef.current!.value;
@@ -24,9 +25,27 @@ export default function Page() {
         usernameRef.current!.value = "";
         passwordRef.current!.value = "";
     }
+
+    // Adds an enter listener event to both input fields
+    useEffect(() =>{ var input = document.getElementById("fname");
+    input!.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("button")!.click();
+    }
+    });})
+
+    useEffect(() =>{ var input = document.getElementById("fpassword");
+    input!.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("button")!.click();
+    }
+    });})
+
     return (
         <main>
-            <div className={styles.MainText}>
+            <div className={styles.MainText} id='test'>
                 <p className={styles.header}>
                     Welcome to Artifex
                 </p>
@@ -75,7 +94,7 @@ export default function Page() {
                 </div>
 
                 <div>
-                    <button onClick={checkCredentials} className={styles.mainButton}>
+                    <button id='button' onClick={checkCredentials} className={styles.mainButton}>
                         Submit
                     </button>
                 </div>
