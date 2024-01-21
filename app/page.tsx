@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import getAIResponse from "./lib/AI";
+import Image from "next/image";
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -49,6 +50,14 @@ export default function Home() {
 
   return (
     <main className='h-full flex flex-col items-left justify-end p-16 gap-8'>
+      {/* <div className = 'items-left justify-items-center'>
+        <Image
+          src="/logo_side.png"
+          alt=""
+          height={0}
+          width={400}>
+        </Image>
+      </div> */}
       {
         resArrRef.current.map((val, index) => {
           const chatUser = index % 2 == 0 ? "ARTIFEX:" : "You:";

@@ -1,11 +1,38 @@
 .MainText {
-    padding-top: 7%;
+    padding-bottom: 2%;
     margin: auto;
     align-self: center;
     text-align: center;
     flex-direction: column;
     display: flex;
     width: 65%;
+}
+
+.Body {
+    padding-bottom: 2%;
+    margin: auto;
+    align-self: center;
+    text-align: left;
+    flex-direction: column;
+    display: flex;
+    width: 65%;
+}
+
+.bodyHeader {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.Header {
+    padding-top:5%;
+    padding-bottom: 7%;
+    margin: auto;
+    align-self: center;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    width: 65%;
+    font-size: 40px;
 }
 
 .Questions {
@@ -46,6 +73,11 @@
     position: absolute;
     bottom: 10%;
     right: 10%;
-    color: white;
+    color:  rgb(235, 73, 73);
     font-size: 20px;
+}
+
+.Screen {
+    background-color: rgb(235, 73, 73);
+    height: 1000px;
 }
